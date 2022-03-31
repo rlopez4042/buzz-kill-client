@@ -1,4 +1,4 @@
-import Projects from "../Projects/Projects";
+import Stings from "../Stings/V1Stings";
 
 const Main = () => {
   const handleLogout = () => {
@@ -10,7 +10,7 @@ const Main = () => {
     <div>
       <nav className="navbar">
         <h1>BuzzKill</h1>
-        <Projects />
+        <Stings />
         <button className="logoutButton" onClick={handleLogout}>
           Logout
         </button>

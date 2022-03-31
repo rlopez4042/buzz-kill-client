@@ -17,6 +17,9 @@ const Login = () => {
 			const url = "http://localhost:4000/users/login";
 			const { data: res } = await axios.post(url, data);
 			localStorage.setItem("token", res.data);
+			console.log(res)
+			console.log(res.token)
+			console.log("token")
 			window.location = "/";
 		} catch (error) {
 			if (
@@ -60,7 +63,7 @@ const Login = () => {
 					</form>
 				</div>
 				<div className="registerLink">
-					<h1>New Here ?</h1>
+					<h1>New here?</h1>
 					<Link to="/register">
 						<button type="button" className="registerButton">
 							Register

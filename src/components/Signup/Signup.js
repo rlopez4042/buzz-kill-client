@@ -20,7 +20,7 @@ const Signup = () => {
 		try {
 			const url = "http://localhost:4000/users/";
 			const { data: res } = await axios.post(url, data);
-			navigate("/register");
+			navigate("/");
 			console.log(res.message);
 		} catch (error) {
 			if (
