@@ -161,7 +161,20 @@ function Stings() {
       <div className="stingFunctions">
         <div className="stickyDIV">
           <section className="welcomePage">
-            <h2>Welcome {user}!</h2>
+            <h2>
+              {user ? (
+                <h2> Welcome {user}! </h2>
+              ) : (
+                <div>
+                  <h2>Log in to post a sting.</h2>
+                  <Link to={"/login"}>
+                    <button id="login" className="button-18">
+                      Log in
+                    </button>
+                  </Link>
+                </div>
+              )}
+            </h2>
             <p className="pageDescription">
               Buzz-Kill is a question and answer website for professional and
               enthusiast programmers. View previous inquiries or create a sting
