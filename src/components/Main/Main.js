@@ -4,17 +4,15 @@ const Main = () => {
   const handleLogout = () => {
     localStorage.removeItem("token");
     window.location.reload();
+    window.location = "/login";
   };
 
   return (
     <div>
-      <nav className="navbar">
-        <h1>BuzzKill</h1>
-        <Stings />
-        <button className="logoutButton" onClick={handleLogout}>
-          Logout
-        </button>
-      </nav>
+      <Stings />
+      <button id="logout" className="button-18" onClick={handleLogout}>
+        Logout
+      </button>
     </div>
   );
 };
