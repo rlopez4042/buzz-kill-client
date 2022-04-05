@@ -130,8 +130,7 @@ const Solutions = () => {
         <ul key={solution._id}>
           <li className="creator">
             Author: <span className="colorSpan">{solution.author}</span> /
-            Publication Date:{" "}
-            <span className="colorSpan">{solution.time}</span>
+            Publication Date: <span className="colorSpan">{solution.time}</span>
           </li>
           <span className="prevDisplaySubtitles">Code Block:</span>
           <section className="displayCode">
@@ -171,7 +170,9 @@ const Solutions = () => {
           <div className="stingToSolveInput">
             <ul>
               <li className="creator">
-                Author: <span className="colorSpan">{sting.author}</span> / Publication Date: <span className="colorSpan">{sting.time}</span>
+                Author: <span className="colorSpan">{sting.author}</span> /
+                Publication Date:{" "}
+                <span className="colorSpan">{sting.time}</span>
               </li>
               <span className="prevDisplaySubtitles">Code Block:</span>
               <section className="displayCode">

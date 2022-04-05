@@ -12,14 +12,17 @@ import AboutMe from "./components/AboutMe/AboutMe";
 
 function App() {
   const user = localStorage.getItem("userName");
-  // const bear = localStorage.getItem("bear");
   console.log({ user });
 
   return (
     <div className="container">
-      <header className = "appHeader">
-      <Link to="/aboutMe">
-          <img className = "aboutMeLink" src={require("./components/AboutMe/AboutMeImage.png")} alt="icon" />
+      <header className="appHeader">
+        <Link to="/aboutMe">
+          <img
+            className="aboutMeLink"
+            src={require("./components/AboutMe/AboutMeImage.png")}
+            alt="icon"
+          />
         </Link>
       </header>
       <Routes>

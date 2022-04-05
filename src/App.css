@@ -9,14 +9,14 @@ Grid layout to follow at the end
 Using comments to keep organized */
 /* @media only screen and (min-device-width: 0px) { */
 /* ---------------------------------- General styling for all components at this size ---------------------------------- */
-.aboutMeLink{
-  max-height:60px;
+.aboutMeLink {
+  max-height: 60px;
 }
-.appHeader{
-  margin-top:10px;
-  margin-bottom:-20px;
+.appHeader {
+  margin-top: 10px;
+  margin-bottom: -20px;
 }
-#meHome{
+#meHome {
   position: absolute;
   top: -5px;
   right: 20px;
@@ -112,8 +112,8 @@ input {
   border-radius: 25px;
   text-align: center;
 }
-.logInLogOut{
-  text-align:center;
+.logInLogOut {
+  text-align: center;
 }
 #logout {
   position: absolute;
@@ -165,10 +165,10 @@ h2 {
   border-radius: 12px;
   padding: 8px;
 }
-.projDescription{
+.projDescription {
   border-style: solid;
   background: #286086;
-  color:orange;
+  color: orange;
   font-size: 12px;
   text-align: center;
   border-radius: 12px;
@@ -235,7 +235,7 @@ h2 {
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-.colorSpan{
+.colorSpan {
   /* font-family: 'Cutive Mono', monospace; */
   /* font-family: 'Exo', sans-serif; */
   /* font-family: 'Fjord One', serif; */
@@ -251,7 +251,7 @@ h2 {
   /* font-family: 'Roboto Mono', monospace; */
   /* font-family: 'Ropa Sans', sans-serif; */
   /* font-family: 'Shippori Antique B1', sans-serif; */
-  color:rgb(24, 216, 24);
+  color: rgb(24, 216, 24);
 }
 /* ---------------------------------- Gird layouts for each of the components in the same order ---------------------------------- */
 /* Grid layout for Register component */
@@ -272,7 +272,7 @@ h2 {
 }
 /* Grid layout for the Project component */
 .projectContainer {
-  padding-top:20px;
+  padding-top: 20px;
   display: grid;
   grid-template-columns: 1fr;
   max-width: 260px;
@@ -282,11 +282,9 @@ h2 {
 .projectContainer .projectFunctions {
   grid-column: 1fr;
   padding-bottom: 30px;
-
 }
 .projectContainer .projectList {
   grid-column: 2fr;
-
 }
 /* Grid layout for the Sting component */
 .stingContainer {

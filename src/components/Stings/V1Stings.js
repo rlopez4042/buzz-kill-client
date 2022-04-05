@@ -24,7 +24,6 @@ function Stings() {
   //Populate the list of projects on page load
   function getStings() {
     fetch(`http://localhost:4000/stings/`)
-      // fetch(`http://localhost:4000/stings/`)
       .then((response) => response.json())
       .then((data) => setStings(data.stings));
   }
@@ -122,8 +121,7 @@ function Stings() {
           <ul key={sting._id}>
             <li className="creator">
               Author: <span className="colorSpan">{sting.author}</span> /
-              Publication Date:{" "}
-              <span className="colorSpan">{sting.time}</span>
+              Publication Date: <span className="colorSpan">{sting.time}</span>
             </li>
             <span className="prevDisplaySubtitles">Code Block:</span>
             <section className="displayCode">
@@ -186,9 +184,7 @@ function Stings() {
                 <p className="pageDescription">{projDesc}</p>
               </section>
             </div>
-            <p className="projDescription">
-              {links}
-            </p>
+            <p className="projDescription">{links}</p>
           </section>
           <form className="userForm" onSubmit={handleSubmit}>
             <h1 className="formTitle">Add Sting:</h1>

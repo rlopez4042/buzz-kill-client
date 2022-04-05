@@ -84,49 +84,52 @@ function Projects() {
   }
 
   //Display list of projects and link each project to its own page with Stings and solutions
-  const projectList = projects.slice(0)
-  .reverse().map((project, index) => (
-    <div key={project._id}>
+  const projectList = projects
+    .slice(0)
+    .reverse()
+    .map((project, index) => (
       <div key={project._id}>
-        <section className="projectInfo" key={project._id}>
-          <ul key={project._id}>
-            <li key={project._id} className="projectTitle">
-              Title:   <span style={{ color: "orange" }}>{project.projectTitle}</span>
-            </li>
-            <li key={project._id} className="projectDirector">
-              Director:{" "}
-              <span style={{ color: "yellow" }}>{project.director} </span> /
-              Initialized:{" "}
-              <span style={{ color: "orange" }}>{project.date}</span>
-            </li>
-          </ul>
-          <button
-            key={index}
-            onClick={deleteProject}
-            value={project._id}
-            className="button-18"
-          >
-            Delete Project
-          </button>
-          <Link
-            key={project._id}
-            to={"/stings"}
-            state={{ projectID: project._id, projectContents: project }}
-            // state={{ project: project._id }}
-          >
-            <button className="button-18">View Project</button>
-          </Link>
-        </section>
+        <div key={project._id}>
+          <section className="projectInfo" key={project._id}>
+            <ul key={project._id}>
+              <li key={project._id} className="projectTitle">
+                Title:{" "}
+                <span style={{ color: "orange" }}>{project.projectTitle}</span>
+              </li>
+              <li key={project._id} className="projectDirector">
+                Director:{" "}
+                <span style={{ color: "yellow" }}>{project.director} </span> /
+                Initialized:{" "}
+                <span style={{ color: "orange" }}>{project.date}</span>
+              </li>
+            </ul>
+            <button
+              key={index}
+              onClick={deleteProject}
+              value={project._id}
+              className="button-18"
+            >
+              Delete Project
+            </button>
+            <Link
+              key={project._id}
+              to={"/stings"}
+              state={{ projectID: project._id, projectContents: project }}
+              // state={{ project: project._id }}
+            >
+              <button className="button-18">View Project</button>
+            </Link>
+          </section>
+        </div>
       </div>
-    </div>
-  ));
+    ));
 
   //Display componenet contents
   return (
     <div className="projectContainer">
       <div className="projectFunctions">
         <section className="welcomePage">
-          <div className= "logInLogOut">
+          <div className="logInLogOut">
             {user ? (
               <h2> Welcome {user}! </h2>
             ) : (
@@ -185,7 +188,9 @@ function Projects() {
                   className="inputField"
                 />
               </li>
-              <button type="Submit" className="button-18">Add Project</button>
+              <button type="Submit" className="button-18">
+                Add Project
+              </button>
             </ul>
           </form>
         </div>
