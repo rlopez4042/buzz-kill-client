@@ -12,20 +12,24 @@ Using comments to keep organized */
 .aboutMeLink {
   max-height: 60px;
 }
+
 .appHeader {
   margin-top: 10px;
   margin-bottom: -20px;
 }
+
 #meHome {
   position: absolute;
   top: -5px;
   right: 20px;
 }
+
 .inputFieldCodeBlock,
 .inputFieldDescription,
 .subtitles {
   display: none;
 }
+
 .inputFieldCodeBlock,
 .inputFieldDescription,
 .inputFieldCodeBlockMobile,
@@ -37,6 +41,7 @@ Using comments to keep organized */
   padding: 10px;
   font-size: 12px;
 }
+
 .displayCode {
   color: black;
   background: white;
@@ -79,6 +84,7 @@ pre {
   border-radius: 25px;
   min-width: 240px;
 }
+
 .userInputRegister,
 .userInputLogin {
   padding-top: 1rem;
@@ -87,11 +93,13 @@ pre {
   border-radius: 25px;
   text-align: center;
 }
+
 .registerForm,
 .loginForm {
   display: inline-flex;
   flex-direction: column;
 }
+
 input {
   margin: 10px;
 }
@@ -104,6 +112,7 @@ input {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+
 .loginLink,
 .registerLink {
   margin-top: 30px;
@@ -112,27 +121,30 @@ input {
   border-radius: 25px;
   text-align: center;
 }
+
 .logInLogOut {
   text-align: center;
 }
+
 #logout {
   position: absolute;
   top: -5px;
   right: 20px;
 }
+
 .projectInputForm {
   text-align: center;
-  /* margin:10px; */
   background-color: burlywood;
   border-radius: 12px;
 }
+
 .projectList {
-  /* padding-top: 1rem; */
   color: white;
   background-color: goldenrod;
   border-radius: 12px;
   text-align: left;
   max-width: auto;
+  max-height:auto;
 }
 .projectInfo {
   border-radius: 12px;
@@ -145,6 +157,7 @@ input {
   margin-top: 10px;
   font-size: 1.2rem;
 }
+
 .projectDirector,
 .projectDate {
   margin-left: 30px;
@@ -158,6 +171,7 @@ h2 {
   color: white;
   border-radius: 12px;
 }
+
 .pageDescription {
   font-size: 12px;
   text-align: center;
@@ -165,6 +179,7 @@ h2 {
   border-radius: 12px;
   padding: 8px;
 }
+
 .projDescription {
   border-style: solid;
   background: #286086;
@@ -174,10 +189,12 @@ h2 {
   border-radius: 12px;
   padding: 8px;
 }
+
 .formTitle,
 .subtitlesMobile {
   font-size: 14px;
 }
+
 .userForm {
   background-color: #ffcc00;
   border-radius: 12px;
@@ -187,14 +204,17 @@ h2 {
   top: 10px;
   min-width: 260px;
 }
+
 .prevDisplay {
   background-color: #ffcc00;
   border-radius: 12px;
   padding: 0px;
 }
+
 .prevDisplaySubtitles {
   padding-left: 20px;
 }
+
 .creator {
   font-size: 14px;
   font-style: oblique 20deg;
@@ -202,6 +222,7 @@ h2 {
   margin-right: 20px;
   padding: 8px;
 }
+
 .individualInput {
   border-radius: 12px;
   color: white;
@@ -211,20 +232,24 @@ h2 {
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
+
 .checkedText {
   text-align: center;
   padding-left: 80px;
 }
+
 /* Styling for the Solution component */
 .problem {
   margin-bottom: 10px;
 }
+
 .stingToSolve {
   background-color: #ff1100;
   border-radius: 12px;
   padding: 01px;
   margin-bottom: 20px;
 }
+
 .stingToSolveInput {
   border-radius: 12px;
   color: white;
@@ -236,24 +261,12 @@ h2 {
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .colorSpan {
-  /* font-family: 'Cutive Mono', monospace; */
-  /* font-family: 'Exo', sans-serif; */
-  /* font-family: 'Fjord One', serif; */
-  /* font-family: 'Hubballi', cursive; */
-  /* font-family: 'Inter', sans-serif; */
-  /* font-family: 'Jost', sans-serif; */
-  /* font-family: 'Noto Serif', serif; */
   font-family: monospace;
   font-style: oblique -20deg;
-  /* font-family: 'Press Start 2P', cursive; */
-  /* font-family: 'PT Mono', monospace; */
-  /* font-family: 'Roboto', sans-serif; */
-  /* font-family: 'Roboto Mono', monospace; */
-  /* font-family: 'Ropa Sans', sans-serif; */
-  /* font-family: 'Shippori Antique B1', sans-serif; */
   color: rgb(24, 216, 24);
 }
 /* ---------------------------------- Gird layouts for each of the components in the same order ---------------------------------- */
+
 /* Grid layout for Register component */
 .registerFormContainer,
 .loginFormContainer {
@@ -261,6 +274,7 @@ h2 {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
 }
+
 .registerFormContainer,
 .registerContents,
 .loginFormContainer,
@@ -279,10 +293,12 @@ h2 {
   padding-bottom: 30px;
   margin: 0 auto;
 }
+
 .projectContainer .projectFunctions {
   grid-column: 1fr;
   padding-bottom: 30px;
 }
+
 .projectContainer .projectList {
   grid-column: 2fr;
 }
@@ -292,6 +308,7 @@ h2 {
   grid-template-columns: 1fr;
   margin: 0 auto;
 }
+
 .stingContainer .stingFunctions {
   grid-column: 1fr;
   grid-row: 1fr;
@@ -299,18 +316,21 @@ h2 {
   padding-bottom: 30px;
   margin: 0 auto;
 }
+
 .stingContainer .prevDisplay {
   grid-column: 1fr;
   grid-row: 2fr;
   max-width: 260px;
   margin: 0 auto;
 }
+
 /* Grid layout for the Solution component */
 .solutionContainer {
   display: grid;
   grid-template-columns: 1fr;
   margin: 0 auto;
 }
+
 .solutionContainer .solutionFunctions {
   grid-column: 1fr;
   grid-row: 1fr;
@@ -318,12 +338,14 @@ h2 {
   padding-bottom: 30px;
   margin: 0 auto;
 }
+
 .solutionContainer .prevDisplay {
   grid-column: 1fr;
   grid-row: 2fr;
   max-width: 260px;
   margin: 0 auto;
 }
+
 /* -------------------------------------------------------------------------- */
 /*                        iPads (portrait and landscape)                      */
 /* -------------------------------------------------------------------------- */
@@ -331,18 +353,23 @@ h2 {
 Divided by component.
 Grid layout to follow at the end
 Using comments to keep organized */
+
 @media only screen and (min-width: 768px) {
+
   /* ---------------------------------- General styling for all components at this size ---------------------------------- */
+
   .buzzKill {
     font-size: 80px;
     letter-spacing: -0.8rem;
   }
+
   .inputFieldCodeBlock,
   .inputFieldDescription,
   .subtitles {
     display: unset;
     max-width: 200px;
   }
+
   /* Styling for the Sting component */
   /* Styling for the Solution component */
   .subtitlesMobile,
@@ -350,6 +377,7 @@ Using comments to keep organized */
   .inputFieldDescriptionMobile {
     display: none;
   }
+
   pre,
   .pageDescription,
   .projDescription,
@@ -361,12 +389,15 @@ Using comments to keep organized */
     font-size: 13px;
     max-width: none;
   }
+
   h2 {
     margin: 10px;
     font-size: 30px;
   }
+
   /* ---------------------------------- Gird layouts for each of the components in the same order ---------------------------------- */
   /* Grid layout for the Project component */
+
   .projectContainer {
     display: grid;
     grid-gap: 20px;
@@ -374,13 +405,16 @@ Using comments to keep organized */
     margin: 0 auto;
     max-width: 700px;
   }
+
   .projectContainer .projectFunctions {
     grid-column: 1fr;
     margin: 0 auto;
   }
+
   .projectContainer .projectList {
     grid-column: 2fr;
   }
+
   /* Grid layout for the Sting component */
   .stingContainer,
   .solutionContainer {
@@ -392,6 +426,7 @@ Using comments to keep organized */
     max-width: 700px;
     margin: 0 auto;
   }
+
   .stingContainer .buzzKillHeader,
   .solutionContainer .buzzKillHeader {
     transform-origin: 350px 200px;
@@ -404,6 +439,7 @@ Using comments to keep organized */
     margin-left: -220px;
     margin-top: -30px;
   }
+
   .stingContainer .stingFunctions {
     position: sticky;
     top: 20px;
@@ -413,12 +449,14 @@ Using comments to keep organized */
     /* grid-gap: 10px; */
     max-width: 280px;
   }
+
   .solutionContainer .solutionFunctions {
     grid-column: 2 / 3;
     grid-row: 1fr;
     /* grid-gap: 10px; */
     max-width: 280px;
   }
+
   .stingContainer .prevDisplay,
   .solutionContainer .prevDisplay {
     grid-column: 3 / 4;
@@ -433,12 +471,16 @@ Using comments to keep organized */
 Divided by component.
 Grid layout to follow at the end
 Using comments to keep organized */
+
 @media only screen and (min-width: 1024px) {
+
   /* ---------------------------------- General styling for all components at this size ---------------------------------- */
+
   .buzzKill {
     font-size: 100px;
     letter-spacing: -1rem;
   }
+
   /* Styling for the Sting component */
   /* Styling for the Sting component */
   .inputFieldCodeBlock,
@@ -446,6 +488,7 @@ Using comments to keep organized */
     display: unset;
     max-width: 250px;
   }
+
   pre,
   .displayDescription,
   .pageDescription,
@@ -454,10 +497,13 @@ Using comments to keep organized */
   .subtitles {
     font-size: 14px;
   }
+
   h2 {
     font-size: 36px;
   }
+
   /* ---------------------------------- Gird layouts for each of the components in the same order ---------------------------------- */
+
   /* Grid layout for the Project component */
   .projectContainer {
     display: grid;
@@ -466,13 +512,16 @@ Using comments to keep organized */
     margin: 0 auto;
     max-width: 1000px;
   }
+
   .projectContainer .projectFunctions {
     grid-column: 1fr;
     margin: 0 auto;
   }
+
   .projectContainer .projectList {
     grid-column: 2fr;
   }
+
   /* Grid layout for the Sting component */
   /* Grid layout for the Solution component */
   .solutionContainer,
@@ -484,6 +533,7 @@ Using comments to keep organized */
     padding: 20px;
     max-width: 960px;
   }
+
   .solutionContainer .buzzKillHeader,
   .stingContainer .buzzKillHeader {
     transform-origin: 350px 200px;
@@ -496,6 +546,7 @@ Using comments to keep organized */
     margin-left: -235px;
     margin-top: 10px;
   }
+
   .solutionContainer .solutionFunctions,
   .stingContainer .stingFunctions {
     grid-column: 2 / 3;
@@ -503,11 +554,11 @@ Using comments to keep organized */
     /* grid-gap: 10px; */
     min-width: 390px;
   }
+
   .solutionContainer .prevDisplay,
   .stingContainer .prevDisplay {
     grid-column: 3 / 4;
     grid-row: 1fr;
     min-width: 580px;
   }
-  /* Grid layout for the AboutMe component */
 }

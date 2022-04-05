@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Project 4 – Buzz-Kill
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- App is fully deployed (both front and back)
+  - Backend created with MongoDB/Express | Deployed on `Heroku`: PENDING
+  - Frontend created with React | Deployed on `GitHub`: PENDING
 
-## Available Scripts
+## Project Description
 
-In the project directory, you can run:
+- Bug Tracker App
 
-### `npm start`
+‘Buzz-Kill’
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+A bug tacker for users to report issues they’ve run into with their own code. 
+-	Users will be required to sign in or create an account before accessing the app.
+-	Users can create their own projects and add other users to their projects. In the project tab, users can create a ‘Sting’ or a trouble ticket, some error they’ve run into with their code block
+-	Each sting will have a section for the ‘Date/Time’, ‘Code Block’, and ‘Comments’.
+-	Once published, the ticket will appear in a list of ‘Stings’. Other users can select and provide feedback for each ‘Sting’. Solution button for comments by other users.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Back-End MVP
 
-### `npm test`
+- Uses MongoDB to implement a back end to collect user profile data and track projects created by users.
+- Uses all CRUD (create, read, update, delete) functionality throughout the project (where it makes sense)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Front-End MVP
 
-### `npm run build`
+- Uses React to leverage the backend API
+- Must communicate with the back-end API RESTfully to CRUD resources 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Version 1:
+-	User authentication
+-	No specific project, users submit code errors, and other users can make comments
+-	Original user can mark trouble ticket either complete or incomplete
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Version 2:
+-	Users can also create a project and specify tickets to the project.
+-	Same functionality, except users will be submitting comments under the project name
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Version 3:
+-	Users can create a project and assign other users to that project
+-	Only users assigned to a project can see the contents and add to the project.

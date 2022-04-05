@@ -144,6 +144,8 @@ function Stings() {
             >
               Delete Sting
             </button>
+            {/* Pass stingID from the button / link */}
+
             <Link
               key={sting._id}
               to={"/solutions"}
@@ -153,6 +155,7 @@ function Stings() {
                 View Solutions
               </button>
             </Link>
+
             <label className="checkedText">Solved:</label>
             <input
               className="checkBOX"

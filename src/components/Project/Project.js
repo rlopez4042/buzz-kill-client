@@ -2,9 +2,6 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Projects() {
-  const [projects, setProjects] = useState([]);
-  const [project, setProject] = useState("");
-
   //Store user info in speperate variables
   const user = localStorage.getItem("userName");
   const userID = localStorage.getItem("userID");
@@ -12,6 +9,9 @@ function Projects() {
 
   //Method to get time for time stamp
   const now = new Date().toLocaleString();
+
+  const [projects, setProjects] = useState([]);
+  const [project, setProject] = useState("");
 
   //Populate the list of projects on page load
   function getProject() {
@@ -111,14 +111,15 @@ function Projects() {
             >
               Delete Project
             </button>
+
             <Link
               key={project._id}
               to={"/stings"}
               state={{ projectID: project._id, projectContents: project }}
-              // state={{ project: project._id }}
             >
               <button className="button-18">View Project</button>
             </Link>
+
           </section>
         </div>
       </div>
@@ -145,8 +146,8 @@ function Projects() {
           </div>
           <p className="pageDescription">
             Buzz-Kill is a project management / bug tracker website, for
-            professional and enthusiast programmers. Create a project and keep
-            track of bugs. below.{" "}
+            professional and enthusiast programmers. Create a project to keep
+            track of bugs you run into and collaborate with other users to squash them.{" "}
           </p>
         </section>
         <div className="projectInputForm">

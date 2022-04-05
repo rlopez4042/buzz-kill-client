@@ -9,7 +9,6 @@ const Solutions = () => {
 
   //Store user info in speperate variables
   const user = localStorage.getItem("userName");
-  // const userID = localStorage.getItem("userID");
   const bear = localStorage.getItem("bear");
 
   //Method to get time for time stamp
@@ -87,7 +86,6 @@ const Solutions = () => {
         })
       )
       .then((response) => response.json())
-      // console.log(sting)
       .then((data) => setSolutions(data.solutions))
       .then(() =>
         setSolution({
@@ -156,6 +154,7 @@ const Solutions = () => {
         </ul>
       </div>
     ));
+
   //Display componenet contents
   return (
     <div className="solutionContainer">
@@ -250,7 +249,7 @@ const Solutions = () => {
               ></textarea>
             </li>
             <button className="button-18" type="Submit">
-              Add Sting
+              Add Solution
             </button>
           </ul>
         </form>
@@ -260,7 +259,7 @@ const Solutions = () => {
       </div>
       <Link to="/">
         <button id="logout" className="button-18">
-          Back to Project Page
+          Back to Home Page
         </button>
       </Link>
     </div>
