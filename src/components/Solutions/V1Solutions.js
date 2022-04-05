@@ -9,7 +9,7 @@ const Solutions = () => {
 
   //Store user info in speperate variables
   const user = localStorage.getItem("userName");
-  const userID = localStorage.getItem("userID");
+  // const userID = localStorage.getItem("userID");
   const bear = localStorage.getItem("bear");
 
   //Method to get time for time stamp
@@ -129,9 +129,9 @@ const Solutions = () => {
       <div className="individualInput" key={index}>
         <ul key={solution._id}>
           <li className="creator">
-            Author: <span style={{ color: "yellow" }}>{solution.author}</span> /
+            Author: <span className="colorSpan">{solution.author}</span> /
             Publication Date:{" "}
-            <span style={{ color: "yellow" }}>{solution.time}</span>
+            <span className="colorSpan">{solution.time}</span>
           </li>
           <span className="prevDisplaySubtitles">Code Block:</span>
           <section className="displayCode">
@@ -141,7 +141,7 @@ const Solutions = () => {
               </code>
             </pre>
           </section>
-          <span className="prevDisplaySubtitles">Problem Set:</span>
+          <span className="prevDisplaySubtitles">Comment:</span>
           <section className="displayDescription">
             <li className="wrapword">{solution.description}</li>
           </section>
@@ -171,7 +171,7 @@ const Solutions = () => {
           <div className="stingToSolveInput">
             <ul>
               <li className="creator">
-                Author: {sting.author} / Publication Date: {sting.time}
+                Author: <span className="colorSpan">{sting.author}</span> / Publication Date: <span className="colorSpan">{sting.time}</span>
               </li>
               <span className="prevDisplaySubtitles">Code Block:</span>
               <section className="displayCode">
@@ -181,7 +181,7 @@ const Solutions = () => {
                   </code>
                 </pre>
               </section>
-              <span className="prevDisplaySubtitles">Problem Set:</span>
+              <span className="prevDisplaySubtitles">Comment:</span>
               <section className="displayDescription">
                 <li className="wrapword">{sting.description}</li>
               </section>
@@ -205,7 +205,7 @@ const Solutions = () => {
                 className="inputFieldCodeBlock"
               ></textarea>
             </li>
-            <span className="subtitles">Your Issue / Intent:</span>
+            <span className="subtitles">Comments:</span>
             <li>
               <textarea
                 cols="40"
@@ -259,7 +259,7 @@ const Solutions = () => {
       </div>
       <Link to="/">
         <button id="logout" className="button-18">
-          Back to Sting Page
+          Back to Project Page
         </button>
       </Link>
     </div>

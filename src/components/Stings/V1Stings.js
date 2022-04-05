@@ -1,7 +1,15 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Stings() {
+  //Get info from previous page and use sting data
+  let data = useLocation();
+  let projID = data.state.projectID;
+  let projDesc = data.state.projectContents.projectDescription;
+  let projTitle = data.state.projectContents.projectTitle;
+  let links = data.state.projectContents.repoLink;
+  console.log(links);
+
   //Store user info in speperate variables
   const user = localStorage.getItem("userName");
   const userID = localStorage.getItem("userID");
@@ -15,7 +23,8 @@ function Stings() {
 
   //Populate the list of projects on page load
   function getStings() {
-    fetch("http://localhost:4000/stings/")
+    fetch(`http://localhost:4000/stings/`)
+      // fetch(`http://localhost:4000/stings/`)
       .then((response) => response.json())
       .then((data) => setStings(data.stings));
   }
@@ -51,6 +60,7 @@ function Stings() {
       },
       method: "POST",
       body: JSON.stringify({
+        projectID: projID,
         authorID: userID,
         author: user,
         codeBlock: sting.codeBlock,
@@ -101,54 +111,61 @@ function Stings() {
   }
 
   //Display list of all stings
-  const stingList = stings
-    .slice(0)
-    .reverse()
-    .map((sting, index) => (
-      <div className="individualInput" key={sting._id}>
-        <ul key={sting._id}>
-          <li className="creator">
-            Author: <span style={{ color: "yellow" }}>{sting.author}</span> /
-            Publication Date:{" "}
-            <span style={{ color: "yellow" }}>{sting.time}</span>
-          </li>
-          <span className="prevDisplaySubtitles">Code Block:</span>
-          <section className="displayCode">
-            <pre>
-              <code>
-                <li>{sting.codeBlock}</li>
-              </code>
-            </pre>
-          </section>
-          <span className="prevDisplaySubtitles">Problem Set:</span>
-          <section className="displayDescription">
-            <li className="wrapword">{sting.description}</li>
-          </section>
-          <button
-            className="button-54"
-            role="button"
-            key={index}
-            onClick={deleteSting}
-            value={sting._id}
-          >
-            Delete Sting
-          </button>
-          <Link key={sting._id} to={"/solutions"} state={{ sting: sting._id }}>
-            <button className="button-54" role="button">
-              View Solutions
+  const stingList =
+    // if(projID == sting.projectID){
+    stings
+      .slice(0)
+      .reverse()
+      .filter((sting) => sting.projectID == projID)
+      .map((sting, index) => (
+        <div className="individualInput" key={sting._id}>
+          <ul key={sting._id}>
+            <li className="creator">
+              Author: <span className="colorSpan">{sting.author}</span> /
+              Publication Date:{" "}
+              <span className="colorSpan">{sting.time}</span>
+            </li>
+            <span className="prevDisplaySubtitles">Code Block:</span>
+            <section className="displayCode">
+              <pre>
+                <code>
+                  <li>{sting.codeBlock}</li>
+                </code>
+              </pre>
+            </section>
+            <span className="prevDisplaySubtitles">Comment:</span>
+            <section className="displayDescription">
+              <li className="wrapword">{sting.description}</li>
+            </section>
+            <button
+              className="button-54"
+              role="button"
+              key={index}
+              onClick={deleteSting}
+              value={sting._id}
+            >
+              Delete Sting
             </button>
-          </Link>
-          <label className="checkedText">Solved:</label>
-          <input
-            className="checkBOX"
-            type="checkbox"
-            value={sting._id}
-            onChange={handleCheckBox}
-            checked={sting.solution}
-          />
-        </ul>
-      </div>
-    ));
+            <Link
+              key={sting._id}
+              to={"/solutions"}
+              state={{ sting: sting._id }}
+            >
+              <button className="button-54" role="button">
+                View Solutions
+              </button>
+            </Link>
+            <label className="checkedText">Solved:</label>
+            <input
+              className="checkBOX"
+              type="checkbox"
+              value={sting._id}
+              onChange={handleCheckBox}
+              checked={sting.solution}
+            />
+          </ul>
+        </div>
+      ));
 
   //Display componenet contents
   return (
@@ -161,24 +178,16 @@ function Stings() {
       <div className="stingFunctions">
         <div className="stickyDIV">
           <section className="welcomePage">
-            <h2>
-              {user ? (
-                <h2> Welcome {user}! </h2>
-              ) : (
+            <div>
+              <section className="welcomePage">
                 <div>
-                  <h2>Log in to post a sting.</h2>
-                  <Link to={"/login"}>
-                    <button id="login" className="button-18">
-                      Log in
-                    </button>
-                  </Link>
+                  <h2>Project: {projTitle}</h2>
                 </div>
-              )}
-            </h2>
-            <p className="pageDescription">
-              Buzz-Kill is a question and answer website for professional and
-              enthusiast programmers. View previous inquiries or create a sting
-              below.{" "}
+                <p className="pageDescription">{projDesc}</p>
+              </section>
+            </div>
+            <p className="projDescription">
+              {links}
             </p>
           </section>
           <form className="userForm" onSubmit={handleSubmit}>
@@ -251,6 +260,11 @@ function Stings() {
       <div className="prevDisplay">
         <ul>{stingList}</ul>
       </div>
+      <Link to="/">
+        <button id="logout" className="button-18">
+          Back to Home Page
+        </button>
+      </Link>
     </div>
   );
 }

@@ -9,6 +9,18 @@ Grid layout to follow at the end
 Using comments to keep organized */
 /* @media only screen and (min-device-width: 0px) { */
 /* ---------------------------------- General styling for all components at this size ---------------------------------- */
+.aboutMeLink{
+  max-height:60px;
+}
+.appHeader{
+  margin-top:10px;
+  margin-bottom:-20px;
+}
+#meHome{
+  position: absolute;
+  top: -5px;
+  right: 20px;
+}
 .inputFieldCodeBlock,
 .inputFieldDescription,
 .subtitles {
@@ -60,11 +72,6 @@ pre {
   font-size: 10px;
   max-width: 280px;
 }
-#logout {
-  position: absolute;
-  top: -5px;
-  right: 20px;
-}
 /* Styling for the Register and Login component */
 .registerContents,
 .loginContents {
@@ -105,6 +112,44 @@ input {
   border-radius: 25px;
   text-align: center;
 }
+.logInLogOut{
+  text-align:center;
+}
+#logout {
+  position: absolute;
+  top: -5px;
+  right: 20px;
+}
+.projectInputForm {
+  text-align: center;
+  /* margin:10px; */
+  background-color: burlywood;
+  border-radius: 12px;
+}
+.projectList {
+  /* padding-top: 1rem; */
+  color: white;
+  background-color: goldenrod;
+  border-radius: 12px;
+  text-align: left;
+  max-width: auto;
+}
+.projectInfo {
+  border-radius: 12px;
+  border-style: solid;
+  background-color: black;
+  margin: 10px;
+}
+.projectTitle {
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+.projectDirector,
+.projectDate {
+  margin-left: 30px;
+}
+
 /* Styling for the Sting component */
 h2 {
   font-size: 22px;
@@ -120,6 +165,15 @@ h2 {
   border-radius: 12px;
   padding: 8px;
 }
+.projDescription{
+  border-style: solid;
+  background: #286086;
+  color:orange;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 12px;
+  padding: 8px;
+}
 .formTitle,
 .subtitlesMobile {
   font-size: 14px;
@@ -131,6 +185,7 @@ h2 {
   margin: 0 auto;
   position: sticky;
   top: 10px;
+  min-width: 260px;
 }
 .prevDisplay {
   background-color: #ffcc00;
@@ -158,7 +213,7 @@ h2 {
 }
 .checkedText {
   text-align: center;
-  padding-left: 40px;
+  padding-left: 80px;
 }
 /* Styling for the Solution component */
 .problem {
@@ -180,9 +235,26 @@ h2 {
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
+.colorSpan{
+  /* font-family: 'Cutive Mono', monospace; */
+  /* font-family: 'Exo', sans-serif; */
+  /* font-family: 'Fjord One', serif; */
+  /* font-family: 'Hubballi', cursive; */
+  /* font-family: 'Inter', sans-serif; */
+  /* font-family: 'Jost', sans-serif; */
+  /* font-family: 'Noto Serif', serif; */
+  font-family: monospace;
+  font-style: oblique -20deg;
+  /* font-family: 'Press Start 2P', cursive; */
+  /* font-family: 'PT Mono', monospace; */
+  /* font-family: 'Roboto', sans-serif; */
+  /* font-family: 'Roboto Mono', monospace; */
+  /* font-family: 'Ropa Sans', sans-serif; */
+  /* font-family: 'Shippori Antique B1', sans-serif; */
+  color:rgb(24, 216, 24);
+}
 /* ---------------------------------- Gird layouts for each of the components in the same order ---------------------------------- */
 /* Grid layout for Register component */
-
 .registerFormContainer,
 .loginFormContainer {
   display: grid;
@@ -197,6 +269,24 @@ h2 {
   grid-column: 1fr;
   grid-row: 1fr;
   margin: 0 auto;
+}
+/* Grid layout for the Project component */
+.projectContainer {
+  padding-top:20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 260px;
+  padding-bottom: 30px;
+  margin: 0 auto;
+}
+.projectContainer .projectFunctions {
+  grid-column: 1fr;
+  padding-bottom: 30px;
+
+}
+.projectContainer .projectList {
+  grid-column: 2fr;
+
 }
 /* Grid layout for the Sting component */
 .stingContainer {
@@ -264,6 +354,7 @@ Using comments to keep organized */
   }
   pre,
   .pageDescription,
+  .projDescription,
   .displayDescription,
   .displayCode,
   .formTitle,
@@ -273,17 +364,32 @@ Using comments to keep organized */
     max-width: none;
   }
   h2 {
-    margin: 0px;
+    margin: 10px;
     font-size: 30px;
   }
   /* ---------------------------------- Gird layouts for each of the components in the same order ---------------------------------- */
+  /* Grid layout for the Project component */
+  .projectContainer {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 2fr;
+    margin: 0 auto;
+    max-width: 700px;
+  }
+  .projectContainer .projectFunctions {
+    grid-column: 1fr;
+    margin: 0 auto;
+  }
+  .projectContainer .projectList {
+    grid-column: 2fr;
+  }
   /* Grid layout for the Sting component */
   .stingContainer,
   .solutionContainer {
     display: grid;
     grid-template-columns: 10px 1fr 1fr;
     grid-template-rows: 1fr;
-    grid-gap: 10px;
+    /* grid-gap: 10px; */
     padding: 10px;
     max-width: 700px;
     margin: 0 auto;
@@ -306,13 +412,13 @@ Using comments to keep organized */
     height: 100vh;
     grid-column: 2 / 3;
     grid-row: 1fr;
-    grid-gap: 10px;
+    /* grid-gap: 10px; */
     max-width: 280px;
   }
   .solutionContainer .solutionFunctions {
     grid-column: 2 / 3;
     grid-row: 1fr;
-    grid-gap: 10px;
+    /* grid-gap: 10px; */
     max-width: 280px;
   }
   .stingContainer .prevDisplay,
@@ -345,14 +451,30 @@ Using comments to keep organized */
   pre,
   .displayDescription,
   .pageDescription,
+  .projDescription,
   .formTitle,
   .subtitles {
-    font-size: 13px;
+    font-size: 14px;
   }
   h2 {
     font-size: 36px;
   }
   /* ---------------------------------- Gird layouts for each of the components in the same order ---------------------------------- */
+  /* Grid layout for the Project component */
+  .projectContainer {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 2fr;
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+  .projectContainer .projectFunctions {
+    grid-column: 1fr;
+    margin: 0 auto;
+  }
+  .projectContainer .projectList {
+    grid-column: 2fr;
+  }
   /* Grid layout for the Sting component */
   /* Grid layout for the Solution component */
   .solutionContainer,
