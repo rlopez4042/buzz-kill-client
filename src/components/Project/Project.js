@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import apiUrl from './apiUrl';
 
 function Projects() {
   //Store user info in speperate variables
@@ -15,7 +16,7 @@ function Projects() {
 
   //Populate the list of projects on page load
   function getProject() {
-    fetch(`http://localhost:4000/projects/`)
+    fetch(apiUrl + `/projects/`)
       .then((response) => response.json())
       .then((data) => setProjects(data.stings));
   }
@@ -43,7 +44,7 @@ function Projects() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(project);
-    fetch("http://localhost:4000/projects/", {
+    fetch(apiUrl + "/projects/", {
       headers: {
         Authorization: "Bearer " + bear,
         "Content-Type": "application/json",
@@ -58,7 +59,7 @@ function Projects() {
         repoLink: project.repoLink,
       }),
     })
-      .then(() => fetch("http://localhost:4000/projects/"))
+      .then(() => fetch(apiUrl + "/projects/"))
       .then((response) => response.json())
       .then((data) => setProjects(data.stings))
       .then(() =>
@@ -72,14 +73,14 @@ function Projects() {
 
   //Delete a project
   function deleteProject(event) {
-    fetch(`http://localhost:4000/projects/${event.target.value}`, {
+    fetch(apiUrl + `/projects/${event.target.value}`, {
       headers: {
         Authorization: "Bearer " + bear,
         "Content-Type": "application/json",
       },
       method: "DELETE",
     })
-      .then(() => fetch("http://localhost:4000/projects/"))
+      .then(() => fetch(apiUrl + "/projects/"))
       .then((response) => response.json())
       .then((data) => setProjects(data.stings));
   }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import apiUrl from './apiUrl';
 
 const Solutions = () => {
   //Get info from previous page and use sting data
@@ -17,7 +18,7 @@ const Solutions = () => {
 
   //Populate the selected sting and solutions on page load
   function getSting() {
-    fetch(`http://localhost:4000/stings/${stingID}`, {
+    fetch(apiUrl + `/stings/${stingID}`, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -26,7 +27,7 @@ const Solutions = () => {
       .then((response) => response.json())
       .then((data) => setSting(data.sting))
       .then(() =>
-        fetch(`http://localhost:4000/stings/allSolutions/${stingID}`, {
+        fetch(apiUrl + `/stings/allSolutions/${stingID}`, {
           headers: {
             Authorization: "Bearer " + bear,
             "Content-Type": "application/json",
@@ -64,7 +65,7 @@ const Solutions = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(solution);
-    fetch(`http://localhost:4000/stings/addSolution/${stingID}`, {
+    fetch(apiUrl + `/stings/addSolution/${stingID}`, {
       headers: {
         Authorization: "Bearer " + bear,
         "Content-Type": "application/json",
@@ -79,7 +80,7 @@ const Solutions = () => {
       }),
     })
       .then(() =>
-        fetch(`http://localhost:4000/stings/allSolutions/${stingID}`, {
+        fetch(apiUrl + `/stings/allSolutions/${stingID}`, {
           headers: {
             Authorization: "Bearer " + bear,
             "Content-Type": "application/json",
@@ -99,7 +100,7 @@ const Solutions = () => {
 
   function deleteSolution(event) {
     fetch(
-      `http://localhost:4000/stings/deleteSolution/${stingID}/${event.target.value}`,
+      apiUrl + `/stings/deleteSolution/${stingID}/${event.target.value}`,
       {
         headers: {
           Authorization: "Bearer " + bear,
@@ -109,7 +110,7 @@ const Solutions = () => {
       }
     )
       .then(() =>
-        fetch(`http://localhost:4000/stings/allSolutions/${stingID}`, {
+        fetch(apiUrl + `/stings/allSolutions/${stingID}`, {
           headers: {
             Authorization: "Bearer " + bear,
             "Content-Type": "application/json",

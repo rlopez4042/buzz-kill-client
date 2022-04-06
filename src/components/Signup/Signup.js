@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import apiUrl from './apiUrl';
 
 const Signup = () => {
   const [data, setData] = useState({
@@ -18,7 +19,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://localhost:4000/users/";
+      const url = apiUrl + "/users/";
       const { data: res } = await axios.post(url, data);
       navigate("/");
       console.log(res.message);

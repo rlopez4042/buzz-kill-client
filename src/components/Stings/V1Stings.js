@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import apiUrl from './apiUrl';
 
 function Stings() {
   //Get info from previous page and use sting data
@@ -23,7 +24,7 @@ function Stings() {
 
   //Populate the list of projects on page load
   function getStings() {
-    fetch(`http://localhost:4000/stings/`)
+    fetch(apiUrl + `/stings/`)
       .then((response) => response.json())
       .then((data) => setStings(data.stings));
   }
@@ -52,7 +53,7 @@ function Stings() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(sting);
-    fetch("http://localhost:4000/stings/", {
+    fetch(apiUrl + `/stings/`, {
       headers: {
         Authorization: "Bearer " + bear,
         "Content-Type": "application/json",
@@ -67,7 +68,7 @@ function Stings() {
         time: now,
       }),
     })
-      .then(() => fetch("http://localhost:4000/stings/"))
+      .then(() => fetch(apiUrl + `/stings/`))
       .then((response) => response.json())
       .then((data) => setStings(data.stings))
       .then(() =>
@@ -80,21 +81,21 @@ function Stings() {
 
   //Delete a project by ID
   function deleteSting(event) {
-    fetch(`http://localhost:4000/stings/${event.target.value}`, {
+    fetch(apiUrl + `/stings/${event.target.value}`, {
       headers: {
         Authorization: "Bearer " + bear,
         "Content-Type": "application/json",
       },
       method: "DELETE",
     })
-      .then(() => fetch("http://localhost:4000/stings/"))
+      .then(() => fetch(apiUrl + `/stings/`))
       .then((response) => response.json())
       .then((data) => setStings(data.stings));
   }
 
   //Checkbox to indicate whether or not a sting has been solved
   function handleCheckBox(event) {
-    fetch(`http://localhost:4000/stings/${event.target.value}`, {
+    fetch(apiUrl + `/stings/${event.target.value}`, {
       headers: {
         Authorization: "Bearer " + bear,
         "Content-Type": "application/json",
@@ -104,7 +105,7 @@ function Stings() {
         solution: (Boolean = !Boolean),
       }),
     })
-      .then(() => fetch("http://localhost:4000/stings/"))
+      .then(() => fetch(apiUrl + `/stings/`))
       .then((response) => response.json())
       .then((data) => setStings(data.stings));
   }
