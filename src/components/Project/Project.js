@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import apiUrl from './apiUrl';
+import apiUrl from '../../apiUrl';
+
 
 function Projects() {
   //Store user info in speperate variables

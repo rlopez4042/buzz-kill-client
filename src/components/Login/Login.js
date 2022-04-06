@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import apiUrl from './apiUrl';
+import apiUrl from '../../apiUrl';
 
 const Login = () => {
   const [data, setData] = useState({ email: "", password: "" });

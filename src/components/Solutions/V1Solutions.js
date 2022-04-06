@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import apiUrl from './apiUrl';
+import apiUrl from '../../apiUrl';
 
 const Solutions = () => {
   //Get info from previous page and use sting data
