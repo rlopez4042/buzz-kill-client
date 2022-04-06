@@ -32,7 +32,7 @@ function App() {
         <Route path="/stings" exact element={<Stings />} />
         <Route path="/solutions" exact element={<Solutions />} />
         <Route path="/projects" exact element={<Projects />} />
-        <Route path="/" element={<Navigate replace to="/login" />} />
+        <Route path="/buzz-kill-client" element={<Navigate replace to="/login" />} />
       </Routes>
     </div>
   );
