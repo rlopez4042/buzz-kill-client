@@ -4,7 +4,7 @@ const Main = () => {
   const handleLogout = () => {
     localStorage.clear();
     window.location.reload();
-    window.location = "/login";
+    window.location = "/buzz-kill-client";
   };
 
   return (
@@ -15,9 +15,11 @@ const Main = () => {
         </h1>
       </header>
       <Projects />
+      <Link to="/login">
       <button id="logout" className="button-18" onClick={handleLogout}>
         Logout
       </button>
+      </Link>
     </div>
   );
 };
