@@ -9,6 +9,7 @@ const Solutions = () => {
 
   //Store user info in speperate variables
   const user = localStorage.getItem("userName");
+  const userID = localStorage.getItem("userID");
   const bear = localStorage.getItem("bear");
 
   //Method to get time for time stamp
@@ -70,6 +71,7 @@ const Solutions = () => {
       },
       method: "PUT",
       body: JSON.stringify({
+        authorID: userID,
         author: user,
         codeBlock: solution.codeBlock,
         description: solution.description,

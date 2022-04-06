@@ -50,6 +50,7 @@ function Projects() {
       },
       method: "POST",
       body: JSON.stringify({
+        directorID: userID,
         director: user,
         date: now,
         projectTitle: project.projectTitle,
@@ -119,7 +120,6 @@ function Projects() {
             >
               <button className="button-18">View Project</button>
             </Link>
-
           </section>
         </div>
       </div>
@@ -147,7 +147,8 @@ function Projects() {
           <p className="pageDescription">
             Buzz-Kill is a project management / bug tracker website, for
             professional and enthusiast programmers. Create a project to keep
-            track of bugs you run into and collaborate with other users to squash them.{" "}
+            track of bugs you run into and collaborate with other users to
+            squash them.{" "}
           </p>
         </section>
         <div className="projectInputForm">

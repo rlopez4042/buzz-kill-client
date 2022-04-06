@@ -110,63 +110,57 @@ function Stings() {
   }
 
   //Display list of all stings
-  const stingList =
-    // if(projID == sting.projectID){
-    stings
-      .slice(0)
-      .reverse()
-      .filter((sting) => sting.projectID == projID)
-      .map((sting, index) => (
-        <div className="individualInput" key={sting._id}>
-          <ul key={sting._id}>
-            <li className="creator">
-              Author: <span className="colorSpan">{sting.author}</span> /
-              Publication Date: <span className="colorSpan">{sting.time}</span>
-            </li>
-            <span className="prevDisplaySubtitles">Code Block:</span>
-            <section className="displayCode">
-              <pre>
-                <code>
-                  <li>{sting.codeBlock}</li>
-                </code>
-              </pre>
-            </section>
-            <span className="prevDisplaySubtitles">Comment:</span>
-            <section className="displayDescription">
-              <li className="wrapword">{sting.description}</li>
-            </section>
-            <button
-              className="button-54"
-              role="button"
-              key={index}
-              onClick={deleteSting}
-              value={sting._id}
-            >
-              Delete Sting
+  const stingList = stings
+    .slice(0)
+    .reverse()
+    .filter((sting) => sting.projectID == projID)
+    .map((sting, index) => (
+      <div className="individualInput" key={sting._id}>
+        <ul key={sting._id}>
+          <li className="creator">
+            Author: <span className="colorSpan">{sting.author}</span> /
+            Publication Date: <span className="colorSpan">{sting.time}</span>
+          </li>
+          <span className="prevDisplaySubtitles">Code Block:</span>
+          <section className="displayCode">
+            <pre>
+              <code>
+                <li>{sting.codeBlock}</li>
+              </code>
+            </pre>
+          </section>
+          <span className="prevDisplaySubtitles">Comment:</span>
+          <section className="displayDescription">
+            <li className="wrapword">{sting.description}</li>
+          </section>
+          <button
+            className="button-54"
+            role="button"
+            key={index}
+            onClick={deleteSting}
+            value={sting._id}
+          >
+            Delete Sting
+          </button>
+          {/* Pass stingID from the button / link */}
+
+          <Link key={sting._id} to={"/solutions"} state={{ sting: sting._id }}>
+            <button className="button-54" role="button">
+              View Solutions
             </button>
-            {/* Pass stingID from the button / link */}
+          </Link>
 
-            <Link
-              key={sting._id}
-              to={"/solutions"}
-              state={{ sting: sting._id }}
-            >
-              <button className="button-54" role="button">
-                View Solutions
-              </button>
-            </Link>
-
-            <label className="checkedText">Solved:</label>
-            <input
-              className="checkBOX"
-              type="checkbox"
-              value={sting._id}
-              onChange={handleCheckBox}
-              checked={sting.solution}
-            />
-          </ul>
-        </div>
-      ));
+          <label className="checkedText">Solved:</label>
+          <input
+            className="checkBOX"
+            type="checkbox"
+            value={sting._id}
+            onChange={handleCheckBox}
+            checked={sting.solution}
+          />
+        </ul>
+      </div>
+    ));
 
   //Display componenet contents
   return (
