@@ -24,7 +24,7 @@ function Stings() {
 
   //Populate the list of projects on page load
   function getStings() {
-    fetch(apiUrl + `/stings/`)
+    fetch(apiUrl + `stings/`)
       .then((response) => response.json())
       .then((data) => setStings(data.stings));
   }
@@ -53,7 +53,7 @@ function Stings() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(sting);
-    fetch(apiUrl + `/stings/`, {
+    fetch(apiUrl + `stings/`, {
       headers: {
         Authorization: "Bearer " + bear,
         "Content-Type": "application/json",
@@ -68,7 +68,7 @@ function Stings() {
         time: now,
       }),
     })
-      .then(() => fetch(apiUrl + `/stings/`))
+      .then(() => fetch(apiUrl + `stings/`))
       .then((response) => response.json())
       .then((data) => setStings(data.stings))
       .then(() =>
@@ -81,21 +81,21 @@ function Stings() {
 
   //Delete a project by ID
   function deleteSting(event) {
-    fetch(apiUrl + `/stings/${event.target.value}`, {
+    fetch(apiUrl + `stings/${event.target.value}`, {
       headers: {
         Authorization: "Bearer " + bear,
         "Content-Type": "application/json",
       },
       method: "DELETE",
     })
-      .then(() => fetch(apiUrl + `/stings/`))
+      .then(() => fetch(apiUrl + `stings/`))
       .then((response) => response.json())
       .then((data) => setStings(data.stings));
   }
 
   //Checkbox to indicate whether or not a sting has been solved
   function handleCheckBox(event) {
-    fetch(apiUrl + `/stings/${event.target.value}`, {
+    fetch(apiUrl + `stings/${event.target.value}`, {
       headers: {
         Authorization: "Bearer " + bear,
         "Content-Type": "application/json",
@@ -105,7 +105,7 @@ function Stings() {
         solution: (Boolean = !Boolean),
       }),
     })
-      .then(() => fetch(apiUrl + `/stings/`))
+      .then(() => fetch(apiUrl + `stings/`))
       .then((response) => response.json())
       .then((data) => setStings(data.stings));
   }
@@ -254,7 +254,7 @@ function Stings() {
       <div className="prevDisplay">
         <ul>{stingList}</ul>
       </div>
-      <Link to="/">
+      <Link to="/buzz-kill-client">
         <button id="logout" className="button-18">
           Back to Home Page
         </button>

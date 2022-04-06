@@ -19,7 +19,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = apiUrl + "/users/";
+      const url = apiUrl + "users/";
       const { data: res } = await axios.post(url, data);
       navigate("/buzz-kill-client");
       console.log(res.message);

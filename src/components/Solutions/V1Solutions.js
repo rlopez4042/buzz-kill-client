@@ -18,7 +18,7 @@ const Solutions = () => {
 
   //Populate the selected sting and solutions on page load
   function getSting() {
-    fetch(apiUrl + `/stings/${stingID}`, {
+    fetch(apiUrl + `stings/${stingID}`, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -27,7 +27,7 @@ const Solutions = () => {
       .then((response) => response.json())
       .then((data) => setSting(data.sting))
       .then(() =>
-        fetch(apiUrl + `/stings/allSolutions/${stingID}`, {
+        fetch(apiUrl + `stings/allSolutions/${stingID}`, {
           headers: {
             Authorization: "Bearer " + bear,
             "Content-Type": "application/json",
@@ -65,7 +65,7 @@ const Solutions = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(solution);
-    fetch(apiUrl + `/stings/addSolution/${stingID}`, {
+    fetch(apiUrl + `stings/addSolution/${stingID}`, {
       headers: {
         Authorization: "Bearer " + bear,
         "Content-Type": "application/json",
@@ -80,7 +80,7 @@ const Solutions = () => {
       }),
     })
       .then(() =>
-        fetch(apiUrl + `/stings/allSolutions/${stingID}`, {
+        fetch(apiUrl + `stings/allSolutions/${stingID}`, {
           headers: {
             Authorization: "Bearer " + bear,
             "Content-Type": "application/json",
@@ -100,7 +100,7 @@ const Solutions = () => {
 
   function deleteSolution(event) {
     fetch(
-      apiUrl + `/stings/deleteSolution/${stingID}/${event.target.value}`,
+      apiUrl + `stings/deleteSolution/${stingID}/${event.target.value}`,
       {
         headers: {
           Authorization: "Bearer " + bear,
@@ -110,7 +110,7 @@ const Solutions = () => {
       }
     )
       .then(() =>
-        fetch(apiUrl + `/stings/allSolutions/${stingID}`, {
+        fetch(apiUrl + `stings/allSolutions/${stingID}`, {
           headers: {
             Authorization: "Bearer " + bear,
             "Content-Type": "application/json",
@@ -260,7 +260,7 @@ const Solutions = () => {
       <div className="prevDisplay">
         <ul>{solutionList}</ul>
       </div>
-      <Link to="/">
+      <Link to="/buzz-kill-client">
         <button id="logout" className="button-18">
           Back to Home Page
         </button>

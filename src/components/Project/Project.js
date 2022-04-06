@@ -17,7 +17,7 @@ function Projects() {
 
   //Populate the list of projects on page load
   function getProject() {
-    fetch(apiUrl + `/projects/`)
+    fetch(apiUrl + `projects/`)
       .then((response) => response.json())
       .then((data) => setProjects(data.stings));
   }
@@ -45,7 +45,7 @@ function Projects() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(project);
-    fetch(apiUrl + "/projects/", {
+    fetch(apiUrl + "projects/", {
       headers: {
         Authorization: "Bearer " + bear,
         "Content-Type": "application/json",
@@ -60,7 +60,7 @@ function Projects() {
         repoLink: project.repoLink,
       }),
     })
-      .then(() => fetch(apiUrl + "/projects/"))
+      .then(() => fetch(apiUrl + "projects/"))
       .then((response) => response.json())
       .then((data) => setProjects(data.stings))
       .then(() =>
@@ -74,14 +74,14 @@ function Projects() {
 
   //Delete a project
   function deleteProject(event) {
-    fetch(apiUrl + `/projects/${event.target.value}`, {
+    fetch(apiUrl + `projects/${event.target.value}`, {
       headers: {
         Authorization: "Bearer " + bear,
         "Content-Type": "application/json",
       },
       method: "DELETE",
     })
-      .then(() => fetch(apiUrl + "/projects/"))
+      .then(() => fetch(apiUrl + "projects/"))
       .then((response) => response.json())
       .then((data) => setProjects(data.stings));
   }
