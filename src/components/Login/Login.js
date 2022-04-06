@@ -14,7 +14,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = apiUrl + "/users/login";
+      const url = (apiUrl + "/users/login");
       const { data: res } = await axios.post(url, data);
 
       //Check contents of res
