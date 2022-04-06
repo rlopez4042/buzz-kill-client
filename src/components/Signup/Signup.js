@@ -21,7 +21,7 @@ const Signup = () => {
     try {
       const url = apiUrl + "/users/";
       const { data: res } = await axios.post(url, data);
-      navigate("/");
+      navigate("/buzz-kill-client");
       console.log(res.message);
     } catch (error) {
       if (

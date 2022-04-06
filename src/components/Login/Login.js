@@ -27,7 +27,7 @@ const Login = () => {
       localStorage.setItem("bear", res.token);
       localStorage.setItem("userName", res.name);
 
-      window.location = "/";
+      window.location = "/buzz-kill-client";
     } catch (error) {
       if (
         error.response &&
