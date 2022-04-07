@@ -1,8 +1,8 @@
 # Project 4 – Buzz-Kill
 
 - App is fully deployed (both front and back)
-  - Backend created with MongoDB/Express | Deployed on `Heroku`: PENDING
-  - Frontend created with React | Deployed on `GitHub`: PENDING
+  - Frontend created with React | Deployed on `GitHub`: https://rlopez4042.github.io/buzz-kill-client/
+  - Backend created with MongoDB/Express | Repo link on `Heroku`: https://github.com/rlopez4042/buzz-kill-mern-api
 
 ## Project Description
 
