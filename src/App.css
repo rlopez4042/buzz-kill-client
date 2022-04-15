@@ -9,6 +9,17 @@ Grid layout to follow at the end
 Using comments to keep organized */
 /* @media only screen and (min-device-width: 0px) { */
 /* ---------------------------------- General styling for all components at this size ---------------------------------- */
+.noUserSting{
+  background-color: #45ca53;
+  border-radius: 12px;
+  min-width: 240px;
+  padding:5px;
+  text-align: center;
+}
+.noUserLine{
+  margin: 10px;
+  padding:5px;
+}
 .aboutMeLink {
   max-height: 60px;
 }
@@ -236,6 +247,7 @@ h2 {
 .checkedText {
   text-align: center;
   padding-left: 80px;
+  padding-bottom: 30px;
 }
 
 /* Styling for the Solution component */

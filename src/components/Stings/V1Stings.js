@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import apiUrl from '../../apiUrl';
+import apiUrl from "../../apiUrl";
 
 function Stings() {
   //Get info from previous page and use sting data
@@ -144,13 +144,13 @@ function Stings() {
             Delete Sting
           </button>
           {/* Pass stingID from the button / link */}
-
+          
           <Link key={sting._id} to={"/solutions"} state={{ sting: sting._id }}>
             <button className="button-54" role="button">
               View Solutions
             </button>
           </Link>
-
+          
           <label className="checkedText">Solved:</label>
           <input
             className="checkBOX"
@@ -184,71 +184,81 @@ function Stings() {
             </div>
             <p className="projDescription">{links}</p>
           </section>
-          <form className="userForm" onSubmit={handleSubmit}>
-            <h1 className="formTitle">Add Sting:</h1>
-            <ul>
-              <span className="subtitles">Code Block:</span>
-              <li>
-                <textarea
-                  cols="40"
-                  rows="6"
-                  type="text"
-                  placeholder="Code Block"
-                  name="codeBlock"
-                  onChange={handleChange}
-                  value={sting.codeBlock}
-                  required
-                  className="inputFieldCodeBlock"
-                ></textarea>
-              </li>
-              <span className="subtitles">Comments:</span>
-              <li>
-                <textarea
-                  cols="40"
-                  rows="6"
-                  type="description"
-                  placeholder="Description"
-                  name="description"
-                  onChange={handleChange}
-                  value={sting.description}
-                  required
-                  className="inputFieldDescription"
-                ></textarea>
-              </li>
-              {/* MobileVersions for user input */}
-              <span className="subtitlesMobile">Code Block:</span>
-              <li>
-                <textarea
-                  cols="28"
-                  rows="4"
-                  type="text"
-                  placeholder="Code Block"
-                  name="codeBlock"
-                  onChange={handleChange}
-                  value={sting.codeBlock}
-                  required
-                  className="inputFieldCodeBlockMobile"
-                ></textarea>
-              </li>
-              <span className="subtitlesMobile">Comments:</span>
-              <li>
-                <textarea
-                  cols="28"
-                  rows="4"
-                  type="description"
-                  placeholder="Description"
-                  name="description"
-                  onChange={handleChange}
-                  value={sting.description}
-                  required
-                  className="inputFieldDescriptionMobile"
-                ></textarea>
-              </li>
-              <button className="button-18" type="Submit">
-                Add Sting
-              </button>
-            </ul>
-          </form>
+          {!user && (
+            <div className="noUserSting">
+              <p className="noUserLine">
+                To add your Sting to this project, navigate back to the homepage
+                and register for an account or sign in!
+              </p>
+            </div>
+          )}
+          {user && (
+            <form className="userForm" onSubmit={handleSubmit}>
+              <h1 className="formTitle">Add Sting:</h1>
+              <ul>
+                <span className="subtitles">Code Block:</span>
+                <li>
+                  <textarea
+                    cols="40"
+                    rows="6"
+                    type="text"
+                    placeholder="Code Block"
+                    name="codeBlock"
+                    onChange={handleChange}
+                    value={sting.codeBlock}
+                    required
+                    className="inputFieldCodeBlock"
+                  ></textarea>
+                </li>
+                <span className="subtitles">Comments:</span>
+                <li>
+                  <textarea
+                    cols="40"
+                    rows="6"
+                    type="description"
+                    placeholder="Description"
+                    name="description"
+                    onChange={handleChange}
+                    value={sting.description}
+                    required
+                    className="inputFieldDescription"
+                  ></textarea>
+                </li>
+                {/* MobileVersions for user input */}
+                <span className="subtitlesMobile">Code Block:</span>
+                <li>
+                  <textarea
+                    cols="28"
+                    rows="4"
+                    type="text"
+                    placeholder="Code Block"
+                    name="codeBlock"
+                    onChange={handleChange}
+                    value={sting.codeBlock}
+                    required
+                    className="inputFieldCodeBlockMobile"
+                  ></textarea>
+                </li>
+                <span className="subtitlesMobile">Comments:</span>
+                <li>
+                  <textarea
+                    cols="28"
+                    rows="4"
+                    type="description"
+                    placeholder="Description"
+                    name="description"
+                    onChange={handleChange}
+                    value={sting.description}
+                    required
+                    className="inputFieldDescriptionMobile"
+                  ></textarea>
+                </li>
+                <button className="button-18" type="Submit">
+                  Add Sting
+                </button>
+              </ul>
+            </form>
+          )}
         </div>
       </div>
       <div className="prevDisplay">

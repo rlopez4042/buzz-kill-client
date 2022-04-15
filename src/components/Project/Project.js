@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import apiUrl from '../../apiUrl';
-
+import apiUrl from "../../apiUrl";
 
 function Projects() {
   //Store user info in speperate variables
@@ -137,7 +136,7 @@ function Projects() {
               <h2> Welcome {user}! </h2>
             ) : (
               <div>
-                <h2>Log in to get started.</h2>
+                <h2>Log in to get started!</h2>
                 <Link to={"/login"}>
                   <button id="login" className="button-18">
                     Log in
@@ -154,49 +153,58 @@ function Projects() {
           </p>
         </section>
         <div className="projectInputForm">
-          <form className="projectForm" onSubmit={handleSubmit}>
-            <ul>
-              <h1>Start a project:</h1>
-              <li>
-                <input
-                  type="projectTitle"
-                  placeholder="Title"
-                  name="projectTitle"
-                  onChange={handleChange}
-                  value={project.projectTitle}
-                  required
-                  className="inputField"
-                />
-              </li>
-              <li>
-                <textarea
-                  cols="16"
-                  rows="8"
-                  type="projectDescription"
-                  placeholder="Project Description"
-                  name="projectDescription"
-                  onChange={handleChange}
-                  value={project.projectDescription}
-                  required
-                  className="inputField"
-                ></textarea>
-              </li>
-              <li>
-                <input
-                  type="repoLink"
-                  placeholder="Repo Link"
-                  name="repoLink"
-                  onChange={handleChange}
-                  value={project.repoLink}
-                  required
-                  className="inputField"
-                />
-              </li>
-              <button type="Submit" className="button-18">
-                Add Project
-              </button>
-            </ul>
-          </form>
+          {!user && (
+            <div>
+              <p className="noUserLine">
+                To add a project of your own, register for an account or sign in!
+              </p>
+            </div>
+          )}
+          {user && (
+            <form className="projectForm" onSubmit={handleSubmit}>
+              <ul>
+                <h1>Start a project:</h1>
+                <li>
+                  <input
+                    type="projectTitle"
+                    placeholder="Title"
+                    name="projectTitle"
+                    onChange={handleChange}
+                    value={project.projectTitle}
+                    required
+                    className="inputField"
+                  />
+                </li>
+                <li>
+                  <textarea
+                    cols="16"
+                    rows="8"
+                    type="projectDescription"
+                    placeholder="Project Description"
+                    name="projectDescription"
+                    onChange={handleChange}
+                    value={project.projectDescription}
+                    required
+                    className="inputField"
+                  ></textarea>
+                </li>
+                <li>
+                  <input
+                    type="repoLink"
+                    placeholder="Repo Link"
+                    name="repoLink"
+                    onChange={handleChange}
+                    value={project.repoLink}
+                    required
+                    className="inputField"
+                  />
+                </li>
+                <button type="Submit" className="button-18">
+                  Add Project
+                </button>
+              </ul>
+            </form>
+          )}
         </div>
       </div>
       <div className="projectList">

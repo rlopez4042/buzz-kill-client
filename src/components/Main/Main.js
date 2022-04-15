@@ -1,7 +1,7 @@
 import Projects from "../Project/Project";
-import { Link } from "react-router-dom";
 
 const Main = () => {
+  const user = localStorage.getItem("userName");
   const handleLogout = () => {
     localStorage.clear();
     window.location.reload();
@@ -16,11 +16,11 @@ const Main = () => {
         </h1>
       </header>
       <Projects />
-      <Link to="/login">
-      <button id="logout" className="button-18" onClick={handleLogout}>
-        Logout
-      </button>
-      </Link>
+      {user && (
+        <button id="logout" className="button-18" onClick={handleLogout}>
+          Logout
+        </button>
+      )}
     </div>
   );
 };

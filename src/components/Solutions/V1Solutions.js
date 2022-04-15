@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import apiUrl from '../../apiUrl';
+import apiUrl from "../../apiUrl";
 
 const Solutions = () => {
   //Get info from previous page and use sting data
@@ -99,16 +99,13 @@ const Solutions = () => {
   };
 
   function deleteSolution(event) {
-    fetch(
-      apiUrl + `stings/deleteSolution/${stingID}/${event.target.value}`,
-      {
-        headers: {
-          Authorization: "Bearer " + bear,
-          "Content-Type": "application/json",
-        },
-        method: "PUT",
-      }
-    )
+    fetch(apiUrl + `stings/deleteSolution/${stingID}/${event.target.value}`, {
+      headers: {
+        Authorization: "Bearer " + bear,
+        "Content-Type": "application/json",
+      },
+      method: "PUT",
+    })
       .then(() =>
         fetch(apiUrl + `stings/allSolutions/${stingID}`, {
           headers: {
@@ -191,73 +188,83 @@ const Solutions = () => {
             </ul>
           </div>
         </div>
-        <form className="userForm" onSubmit={handleSubmit}>
-          <h1 className="formTitle">Add a sting of your own below:</h1>
-          <ul>
-            <span className="subtitles">Your Code Block:</span>
-            <li>
-              <textarea
-                cols="40"
-                rows="6"
-                type="text"
-                placeholder="Code Block"
-                name="codeBlock"
-                onChange={handleChange}
-                value={solution.codeBlock}
-                required
-                className="inputFieldCodeBlock"
-              ></textarea>
-            </li>
-            <span className="subtitles">Comments:</span>
-            <li>
-              <textarea
-                cols="40"
-                rows="6"
-                type="description"
-                placeholder="Description"
-                name="description"
-                onChange={handleChange}
-                value={solution.description}
-                required
-                className="inputFieldDescription"
-              ></textarea>
-            </li>
-            {/* MobileVersions for user input */}
-            <span className="subtitlesMobile">Your Code Block:</span>
-            <li>
-              <textarea
-                cols="28"
-                rows="4"
-                type="text"
-                placeholder="Code Block"
-                name="codeBlock"
-                onChange={handleChange}
-                value={solution.codeBlock}
-                required
-                className="inputFieldCodeBlockMobile"
-              ></textarea>
-            </li>
-            <span className="subtitlesMobile">Your Issue / Intent:</span>
-            <li>
-              <textarea
-                cols="28"
-                rows="4"
-                type="description"
-                placeholder="Description"
-                name="description"
-                onChange={handleChange}
-                value={solution.description}
-                required
-                className="inputFieldDescriptionMobile"
-              ></textarea>
-            </li>
-            <button className="button-18" type="Submit">
-              Add Solution
-            </button>
-          </ul>
-        </form>
+        {user && (
+          <form className="userForm" onSubmit={handleSubmit}>
+            <h1 className="formTitle">Add a sting of your own below:</h1>
+            <ul>
+              <span className="subtitles">Your Code Block:</span>
+              <li>
+                <textarea
+                  cols="40"
+                  rows="6"
+                  type="text"
+                  placeholder="Code Block"
+                  name="codeBlock"
+                  onChange={handleChange}
+                  value={solution.codeBlock}
+                  required
+                  className="inputFieldCodeBlock"
+                ></textarea>
+              </li>
+              <span className="subtitles">Comments:</span>
+              <li>
+                <textarea
+                  cols="40"
+                  rows="6"
+                  type="description"
+                  placeholder="Description"
+                  name="description"
+                  onChange={handleChange}
+                  value={solution.description}
+                  required
+                  className="inputFieldDescription"
+                ></textarea>
+              </li>
+              {/* MobileVersions for user input */}
+              <span className="subtitlesMobile">Your Code Block:</span>
+              <li>
+                <textarea
+                  cols="28"
+                  rows="4"
+                  type="text"
+                  placeholder="Code Block"
+                  name="codeBlock"
+                  onChange={handleChange}
+                  value={solution.codeBlock}
+                  required
+                  className="inputFieldCodeBlockMobile"
+                ></textarea>
+              </li>
+              <span className="subtitlesMobile">Your Issue / Intent:</span>
+              <li>
+                <textarea
+                  cols="28"
+                  rows="4"
+                  type="description"
+                  placeholder="Description"
+                  name="description"
+                  onChange={handleChange}
+                  value={solution.description}
+                  required
+                  className="inputFieldDescriptionMobile"
+                ></textarea>
+              </li>
+              <button className="button-18" type="Submit">
+                Add Solution
+              </button>
+            </ul>
+          </form>
+        )}
       </div>
       <div className="prevDisplay">
+        {!user && (
+          <div>
+            <p className="noUserLine">
+              To add your own solution to this Sting, navigate back to the
+              homepage and register for an account or sign in!
+            </p>
+          </div>
+        )}
         <ul>{solutionList}</ul>
       </div>
       <Link to="/buzz-kill-client">
