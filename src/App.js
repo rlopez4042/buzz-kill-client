@@ -26,7 +26,7 @@ function App() {
         </a>
       </header>
       <Routes>
-        {user && <Route path="/buzz-kill-client" exact element={<Main />} />}
+        <Route path="/buzz-kill-client" exact element={<Main />} />
         <Route path="/register" exact element={<Signup />} />
         <Route path="/login" exact element={<Login />} />
         <Route path="/stings" exact element={<Stings />} />
